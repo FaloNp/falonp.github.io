@@ -1,0 +1,500 @@
+/*Ogolne wartosci*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+body {
+    font-family: gotham;
+    color: white;
+    color: black !important;  
+}
+
+:root {
+    --fontcolor: black;
+    --container_radius:20px;
+    --container_color: #b4bfa2;
+    --background_path: url('foto/MainPage/MainPageBackground.png');
+  }
+/*//////////////////////////////////////////*/
+
+/*Deklarowanie przyciskow*/
+/*Grupa przyciskow odpowiedzialna za zmiane lokalizacji strony*/
+.BarButton{
+    width: 100px;
+    border-radius:10px;
+    border: none;
+    cursor: pointer;
+    height:50px;
+    color:white;
+    background-color: transparent;
+    border: 2px solid white;
+    transition: 0.5s;
+}
+.BarButton:hover{
+    color: #70d774;
+    border: 2px solid #70d774;
+    transition: 0.2s;
+}
+.ScrollButton{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    background-image:url('foto/icons/uparrow.png');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    z-index: 1;
+}
+/*//////////////////////////////////////////*/
+
+
+/*Układanie elementow dla wersji mobilnej strony*/
+
+/*W tym kontenerze beda ukladane kolejne elementy*/
+#FullPageContainer{
+    max-width: 1100px;
+    width: 100%;
+    min-height: 100vh;
+    margin:auto;
+}
+
+/*Blok odpowiadajacy za pasek nawigacji*/
+#BarLayer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    z-index: 2;
+    color:black;
+    background-color: white !important;
+    position: fixed;
+}
+    .BarLayerNavigation{
+        color:black;    
+    }
+    .BarLayerNavigationList{
+        font-size: 27px;
+        justify-content: space-around;
+        align-items: start;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        padding: 20px;
+    }
+    #img img{
+        width: 51px;
+        height: 55px;
+    }
+/*Wylaczenie paska dla pc*/
+nav {
+    visibility: hidden;
+}
+/*//////////////////////////////////////////*/    
+
+
+
+
+
+
+
+
+
+/*Blok opisajacy pierwszy element strony: Strona Główna*/
+.MainPage{
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    background-attachment: fixed;
+    background-color: white;
+    background-image: var(--background_path);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    align-items: center;
+    padding: 10px 0px;
+}
+    .MainPageContainer{
+        justify-content: center;
+    }
+    .MainPageImage img{
+        width: 70px;
+        height: 70px;
+    }
+    #textOnMainPage{
+        width: 20%;
+        font-size: 27px;
+        font-family: 'Times New Roman', Times, serif !important;
+        color:black;
+        padding: 10px;
+        border: 1px solid #000;
+        transition: width 1s ease-out 100ms;
+        display: flex;
+        justify-content: center;
+    }
+    #textOnMainPage:hover{
+        width: 40%;       
+    }
+/*//////////////////////////////////////////*/
+
+
+
+
+
+
+
+
+/*Blok opisajacy pierwszy element strony: Informacje*/
+.InformationPage{
+    background-color: black;
+    background-image: var(--background_path);
+    min-height: 0vh;
+}
+    .InformationPageContainer{
+        width: 90% ;
+        margin:auto;
+        justify-content:left;
+        align-items: center;
+    }
+    .InformationPageFoto{
+        width: 210px;
+        height: 210px;
+        background-image:url('foto/icons/photo.png');
+        background-size: cover;
+        background-position: center;
+        cursor: pointer;
+        border-radius: 50%;
+        margin:20px;
+    }
+    #InformationPageRightCollumn{
+        background-color: var(--container_color);
+        border-radius: var(--container_radius);
+    }
+    #InformationPageRightCollumnText{
+        display: flex;
+        flex-direction: column;
+        padding:20px;
+        border-radius: var(--container_radius); 
+    }
+    #InformationPageTextRow{
+        width: 100%;
+        margin:auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 0px;     
+    }
+    .InformationPageHeaderText{
+        font-size: 27px;
+        padding: 0px;
+    }
+    .InformationPageDescriptionText{
+        font-size: 15px;
+        width: 100%;
+        margin:auto;
+        display: flex;
+        line-height: 1.9;
+        letter-spacing: 0.049em;
+        padding: 14px 0px;
+    }
+/*//////////////////////////////////////////*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Blok opisajacy element strony: Qualification*/
+.QualificationPage{
+    background-color: black;
+    background-image: var(--background_path);
+    min-height: 0vh;
+}
+    .QualificationContainer{
+        width: 90% !important;
+        margin:auto !important;
+        justify-content:left;
+        align-items: center;
+        background-color:var(--container_color);
+        border-radius: var(--container_radius); 
+        
+    }
+    #QualificationPageTextRow{
+        width: 100%;
+        margin:auto;
+        display: flex;
+        align-items: left;
+        justify-content: space-between;
+        padding: 15px 10px;
+        flex-direction: column;     
+    }
+    .QualificationPageHeaderText{
+        font-size: 27px;
+        
+    }
+    .QualificationPageDescriptionText{
+        font-size: 15px;
+        width: 100%;
+        margin:auto;
+        display: flex;
+        line-height: 1.9;
+        letter-spacing: 0.049em;
+        padding: 14px 0px;
+    }  
+    .QualificationPageProgresBar{
+        margin:15px 0px;
+        width: 70%;
+        height: 2.5em;
+        background-color: green;
+        align-items: center;
+        display: flex;
+        padding: 0px 0.2em;
+    }
+    .QualificationPageProgresBarEmpty{
+        position: relative;
+        width: 100%;
+        background-color: white;
+        z-index: 1;
+        height: 2em;
+        box-sizing: border-box;   
+    }
+    .QualificationPageProgresBarUpdate{
+        width: 0%;
+        height: 2em;
+        max-width: 100%;
+        background: linear-gradient(90deg, rgba(36,36,0,1) 0%, rgba(22,121,9,1) 35%, rgba(117,162,26,1) 100%);
+        transition: width 2s ease-out 200ms;
+        box-sizing: border-box;
+    }
+    .QualificationPageProgresBarText{
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        color:white; 
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+/*//////////////////////////////////////////*/
+
+
+
+
+
+
+
+
+
+
+/*Blok opisajacy element strony: Project*/
+.ProjectPage{
+    background-color: black;
+    background-image: var(--background_path);
+    min-height: 0vh;
+}
+    .ProjectPageContainer{
+        width: 90% !important;
+        margin:auto !important;
+        justify-content:left;
+        align-items: center;
+    }
+    #ProjectPageLeftCollumn{
+        width: 100%;
+    }
+    #ProjectContainerLeftCollumn{
+        background-color:var(--container_color);
+        border-radius: var(--container_radius); 
+        padding: 10px;
+    }
+    #ProjectPageTextRow{
+        width: 100%;
+        margin:auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 0px; 
+    }
+    .ProjectPageHeaderText{
+        font-size: 27px;
+        padding: 0px;
+    }
+    .ProjectPageTextCollumn{
+        margin:0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        padding:0px 11px
+    }
+    .ProjectPageDescriptionText{
+        font-size: 15px;
+        width: 100%;
+        margin:auto;
+        display: flex;
+        line-height: 1.9;
+        letter-spacing: 0.049em;
+        padding: 14px 0px;
+    }
+    #ProjectPageRightCollumn{
+        padding:0px 0px;
+        width: 100%;
+    }
+    #ProjectPageRightColumnTextRow{
+        width: 100%;
+        margin:auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 0px;              
+    }
+    .ProjectPagePhoto{
+        width: 100%;
+        justify-content: left;
+        display: flex;
+        padding: 15px 0px;
+    }
+    .ProjectPageOpenfoto {
+        position: relative;
+        width: 100%;
+        height: 210px;
+        background-color: white;
+        color:white;
+        cursor: pointer;
+        border: 2px solid black;
+        overflow: hidden;
+      }
+      
+      .ProjectPageOpenfoto::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: black;
+        transition: width 1.2s ease-in-out;
+      }
+      
+      .ProjectPageOpenfoto:hover::before {
+        width: 100%;
+      }
+    #ProjectPageOpenfotoText{
+        width: 100%;
+        height: 100%;
+        font-size: 50px;
+        position: relative;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .field{
+        overflow: hidden;
+        position: fixed;
+        height: 100vh;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: 200ms ease-in-out;    
+        z-index: 2;
+        background-color: white;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0px 25px;
+        top: 50%;
+        transition: 1.2s;
+        display: flex;
+        flex-direction: column; 
+        border-radius: var(--container_radius);  
+    }
+    #ProjectPageField{
+        border: 1px solid black;
+        max-height: 90vh;
+        border-radius: var(--container_radius); 
+        overflow:scroll !important;
+    }
+    #ProjectPageFieldTextRow{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0px;
+        width: 100%;
+        flex-direction: row;
+        height: 25px;
+    }
+    #ProjectPageFieldContainer{
+        padding: 13px;
+    }
+    .ProjectPageFieldContainerInfo{
+        position: relative;
+        padding-bottom: 57%; /* proporcja 16:9 */
+        padding-top: 30px; /* margines górny */
+        height: 0;
+        overflow: hidden;
+        max-height: 100%;
+        border: 1px solid black;
+        background-size: cover;
+        background-position: center center;
+    }
+    .ProjectPageFieldContainerInfo img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+    #ProjectPageFieldButtonReturn{
+        width: 25px;
+        height: 25px;
+        background-color: transparent;
+        cursor: pointer;
+        z-index: 10;
+        border: 4px solid black;
+        transition: all 0.4s ease;
+        border-radius: 4px;
+    }
+    #ProjectPageFieldButtonReturn:hover{
+        border-radius: 50%;
+    }
+/*//////////////////////////////////////////*/
+
+
+
+
+
+
+
+
+
+
+.activefield{
+    transform: translate(-50%, -50%) scale(1) !important;
+}
+
+
+
+#Inf img{
+    width: 100px;
+    height: 300px;
+}
