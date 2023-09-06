@@ -1,40 +1,58 @@
-let Check = document.getElementById('ProjectPageFieldButtonReturn');
-let Click = document.getElementsByClassName('ProjectPageOpenfoto')[0];
-let Field = document.getElementsByClassName('field')[0];
-
-
-////////////////////////////////////////////////////////////
 //Funkcja odpowiadajaca za progress bar
 const target = document.querySelector('.QualificationPage.MainPage');
+let pBarsFilled = false; // Flaga śledząca, czy paski zostały już wypełnione
 
-// Tworzymy instancję obiektu IntersectionObserver
 const observer = new IntersectionObserver((entries, observer) => {
-  // Jeśli element jest widoczny na stronie, to wywołujemy funkcję
-  if (entries[0].isIntersecting) {
-    FillBar(100);
-  } else {
-    FillBar(0);
+  if (entries[0].isIntersecting && !pBarsFilled) {
+    ResetBar();
+    FillBarsSequentially();
+    pBarsFilled = true; // Ustawienie flagi na true po wypełnieniu pasków
   }
-}, { threshold: 0.5 }); // Określamy, kiedy element ma być uznany za widoczny
+}, { threshold: 0.5 });
 
-// Rozpoczynamy obserwowanie elementu
 observer.observe(target);
 
-function FillBar(x){
-  let barfilled = document.getElementsByClassName('QualificationPageProgresBarUpdate');
-
-  for (var i = 0; i < barfilled.length; i++) {
-      var length = x + "%";
-      barfilled[i].style.width = length;
-  }
+function FillBarsSequentially() {
+  const totalBars = 4; // Ilość pasków do wypełnienia
+  for (let i = 0; i < totalBars; i++) {
+    setTimeout(() => {
+      FillBar(i, 100);
+      ResetBar();
+    }, i * 2200); // Opóźnienie względem indeksu paska
+  }  
 }
 
 
-// tutaj kod, który zwiększa szerokość elementu ".QualificationPageProgresBarUpdate" wraz z załadowaniem strony lub wykonaniem innych działań
+function FillBar(x, procent) {
+  const barfilled = document.getElementsByClassName('QualificationPageProgresBarUpdate')[0];
+  const bartext = document.getElementsByClassName('QualificationPageProgresBarText')[0];
 
+  const done = document.getElementsByClassName('QualificationContainerDoneImg')[x];
+  barfilled.style.transition = "width 2s ease-out 200ms";
+  let progress = 0;
+  const interval = setInterval(() => {
+    if (progress <= procent) {
+      const length = progress + "%";
+      barfilled.style.width = length;
+      if (progress === procent) {
+        bartext.innerHTML = 'DONE';
+        done.style.width="50px";
+        console.log("done");
+      }
+      progress++;
+    } else {
+      clearInterval(interval);
+    }
+  }, 0);
+}
 
-////////////////////////////////////////////////////////////
-
+function ResetBar() {
+  const bar = document.getElementsByClassName('QualificationPageProgresBarUpdate')[0];
+  const texts = document.getElementsByClassName('QualificationPageProgresBarText')[0];
+  bar.style.transition = "none";
+  bar.style.width = '0%';
+  texts.innerHTML = 'L O A D I N G';
+}
 
 
 
@@ -159,9 +177,6 @@ function UserPosition() {
     console.log("1");
   } 
   const where=sectionNames[closestSection]
-  //scrollToElement(where);
-  //console.log(where);
-  //return closestSection !== null ? sectionNames[closestSection] : null;
 }
 
 function ScrollDirection() {
@@ -185,6 +200,20 @@ window.onscroll = function() {
 
 
 // 
+
+//Zamiana tekstu 
+document.addEventListener('DOMContentLoaded', function () {
+  var projectPageOpenfotoText = document.getElementById("ProjectPageOpenfotoText");
+  
+  projectPageOpenfotoText.addEventListener('mouseover', function () {
+      projectPageOpenfotoText.innerHTML = "OPEN";
+  });
+  
+  projectPageOpenfotoText.addEventListener('mouseout', function () {
+      projectPageOpenfotoText.innerHTML = "CLICK";
+  });
+});
+
 
 
 
@@ -212,10 +241,14 @@ window.onscroll = function() {
 
 
 ////////////////////////////////////////////////////////////
-
+const border = document.getElementsByClassName('ProjectPageContainer')[0];
+let Click = document.getElementsByClassName('ProjectPageOpenfoto')[0];
+let Field = document.getElementsByClassName('field')[0];
+let Check = document.getElementById('ProjectPageFieldButtonReturn');
 
 Click.addEventListener('click', () => {
         Field.classList.add('activefield');
+        console.log("done");
 
 });
 
@@ -225,3 +258,67 @@ Check.addEventListener('click', () => {
     }
 });
 
+
+
+
+
+
+
+
+
+
+
+///////
+// Pobierz wszystkie kontenery ProjectPageFieldContainerName
+function Elevator(className, i) {
+  const element = document.querySelectorAll('.' + className)[i];
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+const containers = document.querySelectorAll('.ProjectPageFieldContainerBoxInfo');
+const lastelement = containers.length - 1;
+
+containers.forEach((container, i) => {
+  const buttonleft = container.parentElement.querySelector('.ProjectPageFieldContainerBoxLeft');
+  const buttonright = container.parentElement.querySelector('.ProjectPageFieldContainerBoxRight');
+
+  buttonright.addEventListener('click', () => {
+    let id = i + 1;
+    if (id > lastelement) {
+      id = 0;
+    }
+    Elevator('ProjectPageFieldContainer', id);
+  });
+
+  buttonleft.addEventListener('click', () => {
+    let id = i - 1;
+    if (id < 0) {
+      id = lastelement;
+    }
+    Elevator('ProjectPageFieldContainer', id);
+  });
+});
+
+
+
+
+///////
+// Pobierz wszystkie kontenery ProjectPageFieldContainerName
+const container = document.querySelectorAll('.ProjectPageFieldContainer');
+
+container.forEach(container => {
+  const containerName = container.querySelector('#ProjectPageFieldContainerName');
+  const description = container.querySelector('#ProjectPageFieldContainerDescription');
+  
+  const feld=document.getElementsByClassName('field')[0];
+
+  feld.addEventListener('mouseenter', () => {
+    description.style.right = '0%';
+  });
+  
+  feld.addEventListener('mouseleave', () => {
+    description.style.right = '100%';
+  });
+});

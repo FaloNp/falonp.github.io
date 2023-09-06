@@ -15,9 +15,29 @@ body {
 :root {
     --fontcolor: black;
     --container_color: #b4bfa2;
-    --container_radius:20px;
     --background_path: url('foto/MainPage/MainPageBackground.png');
+    --container_radius: 10px;
+    --container_size:72vh;
   }
+
+#BackPanel{
+    border-radius: 20px;
+    margin-top:50px;
+    width: 90%;
+    height: var(--container_size);
+    background-color: white;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list {
+    list-style-type: none; /* Usunięcie znaków przed wyrazami */
+    padding-left: 0; /* Opcjonalne: usuwa wcięcie listy */
+}
+
+
 /*//////////////////////////////////////////*/
 
 /*Deklarowanie przyciskow*/
@@ -129,6 +149,7 @@ body {
     background-size: cover;
     background-position: center;
     align-items: center;
+    justify-content: center;
 }
     .MainPageContainer{
         justify-content: center;
@@ -167,13 +188,19 @@ body {
     background-image: var(--background_path);
 }
     .InformationPageContainer{
-        min-height: 100vh;
         display: flex;
         justify-content:space-between;
         flex-direction: row;
-        width: 90%;
-        margin:auto;
+        width: 100%;
+    }
+    .InformationPageLeftCollumn{
+        padding:0px;
+        width: 30%;
+        background-color: transparent;
+        height: var(--container_size);
+        display: flex;
         align-items: center;
+        justify-content: center;
     }
     .InformationPageFoto{
         width: 210px;
@@ -185,18 +212,25 @@ body {
         border-radius: 50%;
     }
     #InformationPageRightCollumn{
-        min-height: 70vh;
-        max-height: 100vh;
         padding:0px;
-        width: 50%;
+        width: 70%;
         background-color: var(--container_color);
-        border-radius: var(--container_radius);
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        height: var(--container_size);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+         overflow-y: scroll;
     }
     #InformationPageRightCollumnText{
-        padding:20px;
+        max-width: 70%;
         display: flex;
+        text-align: justify;
+        padding:20px;
         flex-direction: column;
-        text-align: justify; 
     }
     #InformationPageTextRow{
         justify-content: center;
@@ -244,68 +278,111 @@ body {
     background-image: var(--background_path);
 }
     .QualificationContainer{
-        background-color: transparent;
-        align-items: center;
-        width: 90% !important;
-        margin:auto !important;
-        justify-content:left;
-        border-radius: var(--container_radius);
-    }
-    #QualificationPageTextRow{
-        align-items: center;
-        width: 70%;
-        flex-direction: row;
-        margin:auto;
-        display: flex;
-        justify-content: space-between;
-        padding: 15px 10px;    
-    }
-    .QualificationPageHeaderText{
-        font-size: 51px;
-        padding: 0;   
-    }
-    .QualificationPageDescriptionText{
-        font-size: 31px;
         width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        background-color: var(--container_color);
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+    }
+    .QualificationPageLeftCollumn{
+        display: flex;
+    }
+    .QualificationContainerHeader{
+        width: 100%;
+        font-size: 51px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height:25%;
+    }
+    .QualificationContainerBlock{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height:50%;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .QualificationContainerBlockElement{
+        width: 25%;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+       
+    }
+    .QualificationContainerBlockDescriptionText{
+        width: 200px;
+        height: 30%;
         padding: 0px;
         margin:auto;
         display: flex;
+        justify-content: center;
         line-height: 1.9;
         letter-spacing: 0.049em;
-    }  
-    .QualificationPageProgresBar{
-        margin: 0px;
-        width: 350px;
-        margin:15px 0px;
-        height: 2.5em;
-        background-color: green;
-        align-items: center;
+    }
+    .QualificationContainerDone {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
         display: flex;
-        padding: 0px 0.2em;
-    }
-    .QualificationPageProgresBarEmpty{
-        position: relative;
+        align-items: center;
+        justify-content: center;
+        
+      }
+      
+      .QualificationContainerDoneImg {
+        width: 0px;
+        height: 50px;
+        background-image: url('foto/icons/check.png');
+        background-size: cover;
+        background-position: center;
+      } 
+    .QualificationContainerBarLayer{
+        height:25%;
         width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } 
+    .QualificationPageProgresBar {
+        width: 70vh;
+        margin: 15px 0;
+        height: 50px;
         background-color: white;
-        z-index: 1;
-        height: 2em;
-        box-sizing: border-box;   
-    }
-    .QualificationPageProgresBarUpdate{
-        width: 0%;
-        height: 2em;
-        max-width: 100%;
-        background: linear-gradient(90deg, rgba(36,36,0,1) 0%, rgba(22,121,9,1) 35%, rgba(117,162,26,1) 100%);
-        transition: width 2s ease-out 200ms;
+        border: 2px solid green;
         box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden; /* Dodane ukrycie elementów, które wyjdą poza obszar */
     }
-    .QualificationPageProgresBarText{
+    
+    .QualificationPageProgresBarUpdate {
+        width: 0%; /* Rozwinięcie od lewej do prawej */
+        height: 100%;
+        background: linear-gradient(90deg, rgba(36, 36, 0, 1) 0%, rgba(22, 121, 9, 1) 35%, rgba(117, 162, 26, 1) 100%);
+        transition: width 2s ease-out 200ms;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* Elementy zaczynają się od lewej krawędzi */
         position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0; /* Ustawienie na początek elementu rodzica */
+    }
+    
+    .QualificationPageProgresBarText {
+        position: relative;
         z-index: 2;
-        top: 50%;
-        color:white; 
-        left: 50%;
-        transform: translate(-50%, -50%);
+        color: white;
+        background-color: transparent;
     }
 /*//////////////////////////////////////////*/
 
@@ -322,32 +399,43 @@ body {
 .ProjectPage{
     background-color: black;
     background-image: var(--background_path);
-}
+}   
+    #rail{
+        width: 10000px;
+        height: var(--container_size);
+        overflow: hidden;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+    }
     .ProjectPageContainer{
         min-height: 100vh;
         display: flex;
         justify-content:space-between;
         flex-direction: row;
-        width: 90% !important;
+        min-width: 100% !important;
         margin:auto !important;
-        align-items: center;
+        position: relative;
     }
     #ProjectPageLeftCollumn{
         padding:0px;
-        width: 40%;
-    }
-    #ProjectContainerLeftCollumn{
+        min-width: 70%;
         background-color:var(--container_color);
-        border-radius: var(--container_radius);
-        padding: 10px;
+        height: var(--container_size);
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     #ProjectPageTextRow{
-        width: 100%;
+        max-width: 70%;
+        display: flex;
         justify-content: left;
         align-items: center;
-        margin:auto;
-        display: flex;
-        padding: 15px 0px; 
+        padding: 20px;
     }
     .ProjectPageHeaderText{
         font-size: 27px;
@@ -359,7 +447,7 @@ body {
         padding: 0;
         display: flex;
         flex-direction: row;
-        padding:0px 11px
+        padding: 0px 20px;
     }
     .ProjectPageDescriptionText{
         font-size: 15px;
@@ -372,41 +460,52 @@ body {
     }
     #ProjectPageRightCollumn{
         padding:0px 0px;
-        width: 100%;
+        width: 30%;
+        height: var(--container_size);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
     #ProjectPageRightColumnTextRow{
         padding:0px;
-        width: 40%;
-        max-height: 70vh;
+        display: flex;  
         justify-content: center;
         align-items: center;
-        margin:auto;
-        display: flex;            
     }
-    .ProjectPagePhoto{
-        justify-content: center;
-        align-items: center;
-        width: 100%;
+    .ProjectPagePhoto {
+        padding:20px 0px;
+        width: 210px;
         display: flex;
-        padding: 15px 0px;
     }
-    .ProjectPageOpenfoto{
-        width: 450px;
-        height: 450px;
-        background-image:url('foto/main/table.png');
-        background-size: cover;
-        background-position: center;
+    
+    .ProjectPageOpenfoto {
+        position: relative;
+        width: 100%;
+        height: 210px;
+        background-color: white;
         cursor: pointer;
-        border-radius: 50%;
         border: 2px solid black;
+        overflow: hidden;
+        border-radius: 100%;
+    }
+    
+    .ProjectPageOpenfoto::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
         background-color: black;
+        transition: width 1.2s ease-in-out;
     }
-    .ProjectPageOpenfoto:hover{
-        border-radius: 0%;
-        transition: 1.2s;
-        background-color: transparent;
+    
+    .ProjectPageOpenfoto:hover::before {
+        width: 100%;
     }
-    #ProjectPageOpenfotoText{
+    
+    .ProjectPageOpenfotoText {
         width: 100%;
         height: 100%;
         font-size: 50px;
@@ -414,72 +513,137 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        color: black;
     }
-    .field{
-        background-image: var(--background_path);
-        background-size: cover;
-        background-position: center;
-        width: 70%;
-        border: 1px solid black;
-        height: 94vh; 
+    
+    .ProjectPageOpenfotoText:hover {
+        color: white;
+    }
+    
+    .field {
+        background-color: var(--container_color);
+        height: 100%;
+        width: 0%; /* Zmieniłem to na 0 */
+        border-radius: var(--container_radius);
         overflow: hidden;
-        position: fixed;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        transition: 200ms ease-in-out;    
-        z-index: 2;
-        background-color: white;
+        position: relative; /* Zmieniłem na relative */
+        right:0;
+        top:0;
         box-sizing: border-box;
-        padding: 0px 25px;
-        top: 50%;
-        transition: 1.2s;
+        z-index: 2;
         display: flex;
-        flex-direction: column; 
-        border-radius: var(--container_radius); 
+        flex-direction: column;
+        border-radius: 20px;
+        transition: all 1.7s ease;
     }
     #ProjectPageField{
-        background-color: white;
-        margin:25px 0px;
-        max-height: 90vh;
-        border-radius: var(--container_radius);
-        overflow:scroll;
+        background-color: transparent;
+        height:var(--container_size);
+        overflow:hidden;
     }
-    #ProjectPageFieldTextRow{
-        margin:20px;
+    .ProjectPageFieldContainer {
+        padding: 0px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #ProjectPageFieldContainerRow {
+        margin: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 20px 0px;
         width: 100%;
         flex-direction: row;
-        height: 25px;
+        min-height: 25px;
+        font-size: 0px;
+    }
+    
+    #ProjectPageFieldContainerName {
         font-size: 22px;
+        margin: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
-    #ProjectPageFieldContainer{
-        margin:5px;
-        padding: 13px;
-    } 
-    .ProjectPageFieldContainerInfo{
+    
+    #ProjectPageFieldContainerName:hover {
+        cursor: pointer;
+    }
+    
+    .ProjectPageFieldContainerBox {
+        width: 100%;
+        max-height: calc(72vh - 90px);
+        display: flex;
+        flex-direction: row;
+        background-color: black;
+    }
+    
+    .ProjectPageFieldContainerBoxLeft,
+    .ProjectPageFieldContainerBoxRight {
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:transparent;
+        color: black;
+        cursor: pointer;
+        background-color: var(--container_color);
+        transition: background-color 0.3s ease;
+    }
+    
+    .ProjectPageFieldContainerBoxLeft:hover,
+    .ProjectPageFieldContainerBoxRight:hover {
+        background-color:#a1ab72;
+    }
+    #ButtonLeft{
+        margin:0px 2px;
+        width: 25px;
+        height: 25px;
+        border: 4px solid black;
+        border-left: none;
+        border-bottom: none;
+        background-color: transparent;
+        transform: rotate(-135deg);
+    }
+
+    .ButtonRight{
+        transform: rotate(45deg)!important;
+    }
+    
+    .ProjectPageFieldContainerBoxInfo {
         position: relative;
-        padding-bottom: 57%; /* proporcja 16:9 */
-        padding-top: 30px; /* margines górny */
-        max-height: 70%;
-        overflow: hidden;
+        width: 100%;
         max-height: 100%;
-        border: 1px solid black;
-        background-size: cover;
-        background-position: center center;
+        overflow: hidden;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-    .ProjectPageFieldContainerInfo img {
-        position: absolute;
-        top: 0;
-        left: 0;
+    
+    .ProjectPageFieldContainerBoxInfo video {
         width: 100%;
         height: 100%;
-        object-fit: cover;
-      }
-
-    #ProjectPageFieldButtonReturn{
+        object-fit: contain;
+    }
+    
+    
+    #ProjectPageFieldContainerDescription {
+        transition: all 0.7s ease;
+        position: relative;
+        top: -20px;
+        right: 100%;
+        z-index: 2;
+        min-height: 100vh;
+        background-color: var(--container_color);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px 20px;
+    }
+    
+    #ProjectPageFieldButtonReturn {
         width: 25px;
         height: 25px;
         background-color: transparent;
@@ -489,11 +653,15 @@ body {
         transition: all 0.4s ease;
         border-radius: 4px;
         position: absolute;
-        left: 22px;
+        left: 10px;
     }
-    #ProjectPageFieldButtonReturn:hover{
-        border-radius: 50%;
+    
+    #ProjectPageFieldButtonReturn:hover {
+        border-left: none;
+        border-bottom: none;
+        transform: rotate(-135deg);
     }
+    
 /*//////////////////////////////////////////*/
 
 
@@ -505,8 +673,10 @@ body {
 
 
 
-.activefield{
-    transform: translate(-50%, -50%) scale(1) !important;
+.activefield {
+    width: 100%;
+    min-width: 100%;
+    transition: all 2.7s ease;
 }
 #Inf img{
     width: 100px;
