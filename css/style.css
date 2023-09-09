@@ -18,10 +18,15 @@ body {
     --fontcolor: black;
     --container_color: white;
     --background_path: url('foto/MainPage/MainPageBackground.png');
+
+
+    --information_color: beige;
+    --qualification_color: white;
+    --project_color: beige;;
 }
 
 #BackPanel{
-    width: 90%;
+    width: 100%;
 }
 
 .list {
@@ -98,6 +103,7 @@ body {
     flex-direction: column;
     height: 100vh;
     padding: 20px;
+    list-style: none;
 }
 
 #img img {
@@ -158,7 +164,6 @@ nav {
 /*Blok opisajacy pierwszy element strony: Informacje*/
 .InformationPage{
     background-color: black;
-    background-image: var(--background_path);
     min-height: 0vh;
 }
     .InformationPageContainer{
@@ -166,7 +171,7 @@ nav {
         margin:auto;
         justify-content:left;
         align-items: center;
-        background-color: var(--container_color);
+        background-color: var(--information_color);
         display: flex;
         flex-direction: column;
     }
@@ -176,8 +181,7 @@ nav {
         background-color: transparent;
         display: flex;
         align-items: center;
-        justify-content: left;
-        background-color: beige;
+        justify-content: center;
     }
     .InformationPageFoto{
         width: 210px;
@@ -210,6 +214,7 @@ nav {
     .InformationPageHeaderText{
         font-size: 27px;
         padding: 0px;
+        border-bottom: 1px solid white;
     }
     .InformationPageDescriptionText{
         font-size: 15px;
@@ -250,7 +255,7 @@ nav {
     margin:auto !important;
     justify-content:left;
     align-items: center;
-    background-color:var(--container_color);
+    background-color: var(--qualification_color);
     border-radius: var(--container_radius); 
 }
 .QualificationPageLeftCollumn{
@@ -280,11 +285,13 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: beige;
+    border: 1px solid beige;
+    border-left: none;
+    border-right: none;
 }
 .QualificationContainerBlockElementReverse{
     flex-direction: row-reverse;
-    background-color: white;
+    border:none;
 }
 .QualificationContainerBlockDescriptionText{
     width: 200px;
@@ -299,7 +306,7 @@ nav {
 .QualificationContainerDone {
     margin: 10px;
     width: 200px;
-    height: 200px;
+    max-height: 200px;
     border: 1px solid black;
     display: flex;
     align-items: center;
@@ -318,13 +325,13 @@ nav {
     height:25%;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
 } 
 .QualificationPageProgresBar {
-    width: 70vh;
-    margin: 15px 0;
-    height: 50px;
+    width: 70%;
+    margin: 15px;
+    height: 25px;
     background-color: white;
     border: 2px solid green;
     box-sizing: border-box;
@@ -377,7 +384,7 @@ nav {
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color:var(--container_color);
+        background-color: var(--project_color);
         border-radius: var(--container_radius); 
     }
     #ProjectPageLeftCollumn{
@@ -390,11 +397,13 @@ nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 15px; 
+        padding: 15px;
+        
     }
     .ProjectPageHeaderText{
         font-size: 27px;
         padding: 0px;
+        border-bottom: 1px solid white;
     }
     .ProjectPageTextCollumn{
         display: flex;
@@ -423,10 +432,12 @@ nav {
         padding: 15px;              
     }
     .ProjectPagePhoto {
-        width: 90%;
-        justify-content: left;
+        width: calc( 100% - 20px);
+        justify-content: center;
+        align-items: center;
         display: flex;
-        padding: 15px;
+        padding: 10px 0px;
+        margin: 20px 10px;
     }
     
     .ProjectPageOpenfoto {
@@ -435,7 +446,7 @@ nav {
         height: 210px;
         background-color: white;
         cursor: pointer;
-        border: 2px solid black;
+        border: 2px solid beige;
         overflow: hidden;
     }
     
@@ -444,11 +455,12 @@ nav {
         position: absolute;
         top: 0;
         left: 0;
-        width: 0;
+        width: var(--before-width, 0); /* Używamy zmiennej --before-width */
         height: 100%;
-        background-color: black;
+        background: linear-gradient(45deg, #abecd6 0%, #fbed96 100%);
         transition: width 1.2s ease-in-out;
     }
+    
     
     .ProjectPageOpenfoto:hover::before {
         width: 100%;
@@ -469,43 +481,47 @@ nav {
         color: white;
     }    
     .field{
-        background-image: var(--background_path);
-        background-size: cover;
-        background-position: center;
-        overflow: hidden;
+        background: linear-gradient(45deg, #abecd6 0%, #fbed96 100%);
         position: fixed;
         height: 100vh;
         left: -100%;
         transform: translateY(-50%);
         transition: 200ms ease-in-out;    
         z-index: 2;
-        background-color:var(--container_color);
         width: 100%;
         box-sizing: border-box;
         top: 50%;
         transition: 1.2s;
         display: flex;
         flex-direction: column; 
-        border-radius: var(--container_radius);  
+        border-radius: var(--container_radius);
+        overflow: hidden !important;
     }
     #ProjectPageField{
-        
-        max-height: 90vh;
-        border-radius: var(--container_radius); 
-        overflow:scroll;
+        background-color:var(--container_color);
+        max-height: 92vh;
+        border-radius: 20px; 
+        overflow-y:scroll;
+        width: 90%;
+        margin:auto;
     }
     .ProjectPageFieldContainer{
-        padding: 13px;
+        padding: 0px;
+    }
+    #ProjectPageFieldContainerRowMobile{
+        width: 100%;
+        height: 40px;
     }
     #ProjectPageFieldContainerRow{
         display: flex;
         align-items: center;
         justify-content: left;
-        padding: 22px 0px;
+        padding: 0px;
         width: 100%;
         flex-direction: row;
-        height: 25px;
-        font-size: 22px;
+        height: 0px;
+        
+        font-size: 0px;
     }
     #ProjectPageFieldContainerName {
         font-size: 22px;
@@ -534,6 +550,7 @@ nav {
         justify-content: center;
         align-items: center;
         background-color: black;
+        flex-direction: column-reverse;
     }
     .ProjectPageFieldContainerBoxInfo video {
         width: 100%;
@@ -541,18 +558,13 @@ nav {
         object-fit: contain;
     }
     #ProjectPageFieldContainerDescription{
-        transition: all 0.7s ease;
-        position: relative;
-        top:-20px;
-        right:100%;
-        z-index: 2;
-        min-height: 100vh;
+        min-height: 20vh;
         background-color: #b4bfa2;
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding:0px 20px;
-
+        width: 100%;
         display: flex;
     }
     #ProjectPageFieldButtonReturn{
@@ -564,7 +576,9 @@ nav {
         border: 4px solid black;
         transition: all 0.4s ease;
         border-radius: 4px;
-        left: 22px;
+        position: fixed;
+        top:20px;
+        left: calc(90% - 25px);
     }
     #ProjectPageFieldButtonReturn:hover{
         border-left: none;

@@ -18,6 +18,10 @@ body {
     --background_path: url('foto/MainPage/MainPageBackground.png');
     --container_radius: 10px;
     --container_size:72vh;
+    --header_size: 52px;
+    --text_size:25px;
+
+    --text_style: calibry;
   }
 
 #BackPanel{
@@ -76,7 +80,7 @@ body {
 
 /*W tym kontenerze beda ukladane kolejne elementy*/
 #FullPageContainer{
-    min-width: 1100px;
+    min-width: 100%;
     max-width: 2000px;
     width: 100%;
     height: 100vh;
@@ -189,9 +193,9 @@ body {
 }
     .InformationPageContainer{
         display: flex;
-        justify-content:space-between;
         flex-direction: row;
         width: 100%;
+        height: 100%;
     }
     .InformationPageLeftCollumn{
         padding:0px;
@@ -223,14 +227,15 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-         overflow-y: scroll;
+        overflow-y: scroll;
     }
     #InformationPageRightCollumnText{
         max-width: 70%;
         display: flex;
         text-align: justify;
-        padding:20px;
+        padding:0px;
         flex-direction: column;
+        height: 100%;
     }
     #InformationPageTextRow{
         justify-content: center;
@@ -238,20 +243,20 @@ body {
         margin:auto;
         display: flex;
         align-items: center;
-        padding: 15px 0px;     
+        padding: 0px; 
     }
     .InformationPageHeaderText{
-        font-size: 41px;
+        font-size: var(--header_size);
         padding: 0;
     }
     .InformationPageDescriptionText{
-        font-size: 17px;
+        font-size: var(--text_size);
         width: 100%;
-        padding: 0px;
         margin:auto;
         display: flex;
         line-height: 1.9;
         letter-spacing: 0.049em;
+        padding-bottom: 20px;
     }
 /*//////////////////////////////////////////*/
 
@@ -285,46 +290,53 @@ body {
         display: flex;
         align-items: left;
         flex-direction: column;
+        overflow: hidden;
+        overflow-y: scroll;
     }
     .QualificationPageLeftCollumn{
         display: flex;
     }
     .QualificationContainerHeader{
         width: 100%;
-        font-size: 51px;
-        padding: 0;
+        font-size: var(--header_size);
+        padding: 2% 10px;
         display: flex;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
         height:25%;
     }
     .QualificationContainerBlock{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         width: 100%;
-        height:50%;
-        justify-content: center;
-        align-items: center;
+        max-height:100%;
+        justify-content: left;
+        align-items: center; 
         
     }
     .QualificationContainerBlockElement{
-        width: 25%;
-        flex-direction: column;
+        width: 100%;
+        flex-direction: row;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         height: 100%;
-       
+        border: 1px solid beige;
+        border-left: none;
+        border-right: none;
+    }
+    .QualificationContainerBlockElementReverse{
+        border:none;
     }
     .QualificationContainerBlockDescriptionText{
-        width: 200px;
+        min-width: calc(100% - 250px);
         height: 30%;
         padding: 0px;
         margin:auto;
         display: flex;
-        justify-content: center;
+        justify-content: left;
         line-height: 1.9;
         letter-spacing: 0.049em;
+        font-size: var(--text_size);
     }
     .QualificationContainerDone {
         width: 200px;
@@ -333,7 +345,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        
+        margin: 10px;
       }
       
       .QualificationContainerDoneImg {
@@ -351,11 +363,12 @@ body {
         align-items: center;
     } 
     .QualificationPageProgresBar {
-        width: 70vh;
-        margin: 15px 0;
-        height: 50px;
+        width: 70%;
+        margin: 0px;
+        height: 25px;
         background-color: white;
-        border: 2px solid green;
+        border: 2px solid black;
+        border-right: none;
         box-sizing: border-box;
         display: flex;
         align-items: center;
@@ -431,14 +444,16 @@ body {
         justify-content: center;
     }
     #ProjectPageTextRow{
-        max-width: 70%;
+        position: absolute;
+        top:0px;
+        width: 70%;
         display: flex;
         justify-content: left;
         align-items: center;
-        padding: 20px;
+        padding: 2% 10px;
     }
     .ProjectPageHeaderText{
-        font-size: 27px;
+        font-size: var(--header_size);
         padding: 0px;
     }
     .ProjectPageTextCollumn{
@@ -450,7 +465,7 @@ body {
         padding: 0px 20px;
     }
     .ProjectPageDescriptionText{
-        font-size: 15px;
+        font-size: var(--text_size);
         width: 100%;
         margin:auto;
         display: flex;
@@ -476,13 +491,13 @@ body {
     .ProjectPagePhoto {
         padding:20px 0px;
         width: 210px;
+        height: 210px;
         display: flex;
     }
     
     .ProjectPageOpenfoto {
         position: relative;
         width: 100%;
-        height: 210px;
         background-color: white;
         cursor: pointer;
         border: 2px solid black;
@@ -508,7 +523,7 @@ body {
     .ProjectPageOpenfotoText {
         width: 100%;
         height: 100%;
-        font-size: 50px;
+        font-size: var(--text_size);
         position: relative;
         display: flex;
         align-items: center;
