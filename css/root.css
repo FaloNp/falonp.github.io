@@ -1,0 +1,228 @@
+:root {
+    --fontcolor: black;
+    --container_color: white;
+    --background_path: url('foto/MainPage/MainPageBackground.png');
+    --colored_font: #1B4D3E;
+    --Homebackground: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+	font-family: 'Montserrat', sans-serif;
+	scroll-behavior: smooth;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.list {
+    list-style-type: none; /* Usunięcie znaków przed wyrazami */
+    padding-left: 0; /* Opcjonalne: usuwa wcięcie listy */
+}
+
+h1 {
+    color: var(--colored_font);
+    font-size: 50px; 
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: var(--colored_font); /* Zielony kolor tekstu dla h2 */
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.specialText{
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Pacifico';
+}
+section{
+    padding: 0;
+    margin:0;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    height: 100%;
+}
+
+nav{
+    display:none;
+}
+.menu_button{
+    display: none;
+}
+.menu{
+    display: none;
+}
+
+#FullPageContainer {
+    display: flex;
+    flex-direction: column;
+    height: 400vh; /* 4 sections * 100vh */
+}
+#BarLayer {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    top:0px;
+    left: 0px;
+    z-index: 2;
+    background: white;
+    color:black;
+}
+#Logo{
+    color:var(--colored_font);
+    margin:0px 10px;
+    font-size: large;
+    font-family: 'Pacifico', cursive;
+}
+
+#HomePage{
+    height: 100%;
+    width: 100%;
+
+    background-attachment: fixed;
+    background-color: white;
+    background-image: var(--background_path);
+    background-size: cover;
+    background-position: center;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.HomePageContainer {
+    padding:20px;
+    width: 100%;
+}
+
+#HomePagePortfolio {
+    font-size: 27px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    border: 1px solid #000;
+    transition: width 1s ease-out 100ms;
+    display: flex;
+    justify-content: center;
+    margin: 0px 20px;
+}
+
+
+.LeftCollumn{
+    position:relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.RightCollumn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.HeaderRow{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 20px; 
+}
+
+.SpecialRow{
+    width: 100%;
+    border-bottom: 2px solid beige;
+    display: flex;
+    flex-direction: row;
+    font-size: xx-large;
+}
+
+.ScrollButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-image: url('foto/icons/uparrow.png');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.ProjectsPageButtonField{
+    width: 110px;
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #abecd6 0%, #fbed96 100%);
+}
+.ProjectsPageButton {
+    width: 100px;
+    height: 100px;
+    border: 10px solid transparent;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #fbed96;
+    border-right: 5px solid #abecd6;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+}
+.ProjectsPageButtonText{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    left: 50%;
+    top:calc(50% + 40px);
+    font-size: 20px;
+    color:#1B4D3E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Pacifico';
+    cursor: pointer;
+}
+.ProjectsPageButton:hover{
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

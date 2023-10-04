@@ -1,0 +1,493 @@
+/*Ogolne wartosci*/
+:root {
+    --container_color: #b4bfa2;
+    --background_path: url('foto/MainPage/MainPageBackground.png');
+    --bar_size: 72px;
+    --header_size: 52px;
+    --text_size:25px;
+    --colored_font: #1B4D3E;
+    --Homebackground: white;
+    --Project_margin: 20px; 
+}
+
+section{
+    background-attachment: fixed;
+    background-color: white;
+    background-image: var(--background_path);
+    background-size: cover;
+    background-position: center;
+}
+/*//////////////////////////////////////////*/
+
+/*Deklarowanie przyciskow*/
+/*Grupa przyciskow odpowiedzialna za zmiane lokalizacji strony*/
+.BarButtonDeskop{
+    width: 100px;
+    border-radius:10px;
+    border: none;
+    cursor: pointer;
+    height:50px;
+    color:black;
+    background-color: transparent;
+    border: 2px solid black;
+    transition: 0.5s;
+}
+.BarButtonDeskop:hover{
+    color: #70d774;
+    border: 2px solid #70d774;
+    transition: 0.2s;
+}
+/*//////////////////////////////////////////*/
+
+
+
+/*W tym kontenerze beda ukladane kolejne elementy*/
+#FullPageContainer{
+    min-width: 100%;
+    max-width: 2000px;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    min-height: 100vh;
+    margin:auto;
+}
+
+/*Blok odpowiadajacy za pasek nawigacji*/
+#BarLayer {
+    height: var(--bar_size);
+}
+nav {
+    display: flex;
+}
+nav ul li {
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 100%;
+}
+nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    text-decoration: none;
+    color: lime;
+    cursor: pointer;
+}
+#Bar{
+    display: flex;
+    flex-direction: row;
+}
+/*//////////////////////////////////////////*/    
+
+.BackPanel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 90%;
+    aspect-ratio: 16/9;
+    min-height: 50%;
+    border-radius: 20px;
+    margin-top:var(--bar_size);
+    background: white;
+    position: relative;
+    min-height: 500px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.CollumnText {
+    max-width: 90%;
+    height: 100%;
+    display: flex;
+    text-align: start;
+    flex-direction: column;
+    padding: var(--Project_margin);
+    font-size: 15px; /* Przykładowa wielkość czcionki */
+    line-height: 1.5; /* Przykładowa wysokość linii */
+    letter-spacing: 1px; /* Przykładowy odstęp między literami */
+    color: black; /* Przykładowy kolor tekstu */
+}
+
+.LeftCollumn{
+    width: 50%;
+    height: 100%;
+}
+
+.RightCollumn{
+    width: 50%;
+    height: 100%;
+}
+/*Blok opisajacy pierwszy element strony: Informacje*/
+.AboutPage{
+    background-color: white;
+    
+}
+.AboutPageLeftCollumn{
+    padding:0px;
+    width: 30%;
+}
+.AboutPageFoto{
+    width: 210px;
+    height: 210px;
+    background-image:url('foto/icons/photo.png');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.AboutPageRightCollumn{
+    padding:50px;
+    width: 70%;
+    background-color: var(--container_color);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    align-items: start;
+    overflow-y: scroll;
+    flex-direction: column;
+    border-left: 2px solid beige;
+    background: transparent;
+}
+.AboutPageRightCollumnHeader{
+    margin-top: 50px;
+}
+.AboutPageDescriptionText{
+    font-size: var(--text_size);
+    width: 100%;
+    margin:auto;
+    display: flex;
+}
+/*//////////////////////////////////////////*/
+
+/*Blok opisajacy element strony: Information*/
+.InformationPage{
+    flex-direction: column;
+}
+#InformationContainer{
+    width: 100%;
+    height: calc(100% - 100px);
+    display: flex;
+    flex-direction: row;
+}
+.InformationPageLeftCollumn{
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: var(--Project_margin);
+}
+#InformationLeftCollumnContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.InformationLeftCollumnContainerText{
+    font-size: large;
+    margin: 20px 20%;
+}
+.InformationPageRightCollumn{
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: var(--Project_margin);
+}
+.InformationRightCollumnSpecialText{
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.InformationContainerBlock{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height:100%;
+    justify-content: left;
+    align-items: center; 
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.InformationContainerBlockElement{
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    border-bottom: 1px solid beige;
+    border-left: none;
+    border-right: none;
+}
+.InformationContainerBlockElementReverse{
+    background-color: beige;
+}
+.InformationContainerBlockDescriptionText{
+    min-width: calc(100% - 250px);
+    height: 30%;
+    padding: 0px;
+    margin:auto;
+    display: flex;
+    justify-content: left;
+    line-height: 1.9;
+    letter-spacing: 0.049em;
+    font-size: var(--text_size);
+}
+.InformationContainerDone {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+  }
+  
+.InformationContainerDoneImg {
+  width: 0px;
+  height: 50px;
+  background-image: url('foto/icons/check.png');
+  background-size: cover;
+  background-position: center;
+} 
+.InformationContainerBarLayer{
+    height:25%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.InformationPageProgresBar {
+    width: 70%;
+    margin: 0px;
+    height: 25px;
+    background-color: white;
+    border: 2px solid black;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Dodane ukrycie elementów, które wyjdą poza obszar */
+}
+
+.InformationPageProgresBarUpdate {
+    width: 0%; /* Rozwinięcie od lewej do prawej */
+    height: 100%;
+    background: linear-gradient(90deg, rgba(36, 36, 0, 1) 0%, rgba(22, 121, 9, 1) 35%, rgba(117, 162, 26, 1) 100%);
+    transition: width 2s ease-out 200ms;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Elementy zaczynają się od lewej krawędzi */
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0; /* Ustawienie na początek elementu rodzica */
+}
+
+.InformationPageProgresBarText {
+    position: relative;
+    z-index: 2;
+    color: white;
+    background-color: transparent;
+    font-size: 20px;
+    font-family: 'Pacifico';
+}
+/*//////////////////////////////////////////*/
+
+/*Blok opisajacy element strony: Projects*/
+.ProjectsPage{
+    flex-direction: column
+}
+.ProjectsPageLeftCollumn{
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: var(--Project_margin);
+}
+
+#ProjectsPageButtonContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ProjectsPageRightCollumn{
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: var(--Project_margin);
+}
+#ProjectsPageRightCollumnContent{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+#ProjectsPageRightCollumnContent img{
+    width: 25px;
+    height: 25px;
+    margin-right:20px;
+}
+/*//////////////////////////////////////////*/
+
+/*Blok opisajacy element strony: Field*/
+.Field {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 20px;
+
+    position: absolute; 
+    top: 0;
+    left: -200%;
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+    transition: left 0.5s ease-in-out;   
+
+    box-shadow: 10px 12px 10px rgba(0, 0, 0, 0.2);
+}
+
+.Field.active {
+    left: 0;
+}
+
+#FieldPage{
+    background-color: transparent;
+    height:var(--container_size);
+    overflow:hidden;
+}
+
+.FieldBlock{
+    width: 100%;
+    height: 100%;
+}
+
+.FieldPageRow {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0px 25px;
+    flex-direction: row;
+    height: 50px;
+}
+
+.FieldPageButtonReturn{
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 10;
+    border: 4px solid black;
+    transition: all 0.4s ease;
+    border-radius: 4px;
+}
+
+.FieldPageButtonReturn:hover {
+    border-left: none;
+    border-bottom: none;
+    transform: rotate(-135deg);
+}
+
+.FieldPageContainer {
+    padding: 0px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    height: calc(100% - 100px);
+}
+.FieldPageContainerLeft{
+    width: 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.ButtonLeft{
+    width: 25px;
+    height: 25px;
+    border: 4px solid black;
+    border-left: none;
+    border-bottom: none;
+    background-color: transparent;
+    transform: rotate(-135deg);
+    transition: all 0.3s ease;
+}
+.ButtonLeft:hover{
+    background-color: beige;
+}
+.FieldPageContainerLeftCollumn{
+    width: 30%;
+}
+#FieldPageContainerDescription {
+    transition: all 0.7s ease;
+    position: relative;
+    top: -20px;
+    right: 100%;
+    z-index: 2;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 20px;
+    font-size: x-large;
+    overflow-y: scroll;
+}
+
+.FieldPageContainerDescriptionHeader {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+}
+.FieldPageContainerRightCollumn{
+    width: 70%;
+}
+
+.FieldPageContainerRightCollumnInfo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    
+}
+#videoPlayer {
+    background-color: black;
+    border-radius: 20px;
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 16/9;
+    
+   
+}
+
+
+.FieldPageContainerRight {
+    
+    
+}
+.ButtonRight{
+    transform: rotate(45deg)!important;
+}
+.ButtonRight:hover{
+    background-color: beige;
+}
+
+
+    
+/*//////////////////////////////////////////*/
