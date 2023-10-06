@@ -88,7 +88,6 @@ nav ul li a:hover {
     flex-direction: row;
     width: 90%;
     aspect-ratio: 16/9;
-    min-height: 50%;
     border-radius: 20px;
     margin-top:var(--bar_size);
     background: white;
@@ -157,6 +156,7 @@ nav ul li a:hover {
     width: 100%;
     margin:auto;
     display: flex;
+    text-align: justify;
 }
 /*//////////////////////////////////////////*/
 
@@ -327,6 +327,17 @@ nav ul li a:hover {
     align-items: start;
     justify-content: center;
 }
+.ProjectsPageRightCollumnContentRow{
+    padding:10px 10px;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 100%;
+}
+.ProjectsPageRightCollumnContentRow:hover{
+    background-color: #1B4D3E;
+    
+}
 
 #ProjectsPageRightCollumnContent img{
     width: 25px;
@@ -491,3 +502,13 @@ nav ul li a:hover {
 
     
 /*//////////////////////////////////////////*/
+@media screen and (max-height: 500px) {
+
+    section{
+        overflow-y: scroll I !important;
+        padding: 250px 0px;
+    }
+    #FullPageContainer{
+        overflow: scroll !important;
+    }
+    }

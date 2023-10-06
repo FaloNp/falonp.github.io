@@ -86,6 +86,10 @@ section{
     border:none;
     transition: 0.5s;
     font-size: 50px;
+
+
+    
+    font-weight: bold;
 }
 
 .BarButton:hover {
@@ -100,7 +104,8 @@ section{
 #FullPageContainer {
     max-width: 1100px;
     width: 100%;
-    min-height: 100vh;
+    height: auto;
+    min-height: 400vh !important;
     margin: auto;
 }
 /* Blok odpowiadający paskowi nawigacji */
@@ -126,7 +131,7 @@ section{
 /*//////////////////////////////////////////*/
 
 /* Blok opisujący pierwszy element strony: Strona Główna */
-#BackPanel{
+.BackPanel{
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
@@ -134,8 +139,9 @@ section{
     flex-direction: column;
     overflow: hidden;
     align-items: center;
-    padding: var(--Project_margin);
+    padding: 0px;
     background-color: white;
+    min-height: 100px !important;
 }
 .CollumnText{
     max-width: 90%;
@@ -176,6 +182,7 @@ section{
 .AboutPageLeftCollumn{
     width: 100%;
     height: 30vh;
+    min-height: 210px;
     display: flex;
     flex-direction: column;
 }
@@ -193,9 +200,10 @@ section{
     height: 70vh;
     flex-direction: column;
     overflow-y: scroll;
+    min-height: 1000px;
 }
 .AboutPageRightCollumnHeader{
-    margin-top: 100px;
+    margin-top: 0px;
 }
 .AboutPageDescriptionText{
     font-size: var(--text_size);
@@ -205,6 +213,7 @@ section{
     line-height: 1.9;
     letter-spacing: 0.049em;
     padding-bottom: 20px;
+    margin-top:0px;
 }
 /*//////////////////////////////////////////*/
 
@@ -360,6 +369,7 @@ section{
     align-items: start;
     justify-content: start;
     padding: var(--Project_margin);
+    min-height: 200px;
 }
 #ProjectsPageButtonContainer{
     width: 100%;
@@ -371,25 +381,40 @@ section{
 
 .ProjectsPageRightCollumn{
     flex-direction: column;
+    display: flex;
     align-items: start;
-    justify-content: start;
-    height: 50vh;
+    justify-content: center;
+    max-height: 50vh;
     overflow: hidden;
     background-color: beige;
+    height: auto;
     padding: 20px;
+    min-height: 150px;
 }
 .ProjectsPageRightCollumnHeader{
     height: 25%;
     margin:0;
+    border-bottom: 2px solid white;
 }
 #ProjectsPageRightCollumnContent{
     width: 100%;
-    height: 100%;
-    max-height: 100%;
-    margin-bottom: 100px;
+    height: auto;
+    min-height: 100%;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     align-items: start;
+}
+.ProjectsPageRightCollumnContentRow{
+    padding:10px 10px;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 100%;
+}
+.ProjectsPageRightCollumnContentRow:hover{
+    background-color: #1B4D3E;
+    
 }
 #ProjectsPageRightCollumnContent img{
     width: 25px;
@@ -518,3 +543,6 @@ section{
     aspect-ratio: 16/9;    
 }
 /*//////////////////////////////////////////*/
+@media screen and (max-height: 500px) {
+    
+}
