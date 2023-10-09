@@ -53,7 +53,7 @@ section{
 }
 
 /*Blok odpowiadajacy za pasek nawigacji*/
-#BarLayer {
+.BarLayer {
     height: var(--bar_size);
 }
 nav {

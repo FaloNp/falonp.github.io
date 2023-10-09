@@ -53,7 +53,7 @@ section{
 }
 
 /*Blok odpowiadajacy za pasek nawigacji*/
-#BarLayer {
+.BarLayer {
     height: var(--bar_size);
 }
 nav {
@@ -313,6 +313,14 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.ProjectsPageButton{
+    width: 200px;
+    height: 200px;
+}
+.ProjectsPageButtonField{
+    width: 225px;
+    height: 225px;
 }
 .ProjectsPageRightCollumn{
     flex-direction: column;

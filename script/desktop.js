@@ -21,20 +21,7 @@ ScrollButton.addEventListener('click', function() {
 scrollToElement('HomePageNav');
 });
 
-///////////////////////////////////////////////////////////////////////////////////////
-//Information: Funkcja odpowiedzialna za wypelnienie pasków postępu
-const target = document.querySelector('.BackPanel.InformationPage');
-let pBarsFilled = false; // Flaga śledząca, czy paski zostały już wypełnione
 
-const observer = new IntersectionObserver((entries, observer) => {
-  if (entries[0].isIntersecting && !pBarsFilled) {
-    ResetBar();
-    FillBarsSequentially();
-    pBarsFilled = true; // Ustawienie flagi na true po wypełnieniu pasków
-  }
-}, { threshold: 0.5 });
-
-observer.observe(target);
 
 //Projects: Funkcja odpowiadająca za przewijanie nastepnych projektow
 const containers = document.querySelectorAll('.FieldPageContainer');

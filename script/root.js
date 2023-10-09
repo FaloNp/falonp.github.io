@@ -38,7 +38,7 @@ function initializeMenu() {
 }
 
 
-//Zamukanie menu MOBILE
+//Zamykanie menu MOBILE
 function CloseMenu() {
   const menu = document.querySelector(".menu");
   const bars = document.querySelectorAll(".menu_bar");
@@ -57,17 +57,37 @@ function hideElement(selector,n) {
   var element = document.querySelector(selector);
   if (element) {
     if(n==0){
-      console.log("hide");
       element.style.display = "none";
     }
     else{
-      console.log("show");
       element.style.display = "flex";
     }
   } else {
     console.log("Element not found");
   }
 }
+
+const HomePage = document.querySelector('.HomePagePortfolio');
+const BarLayer = document.querySelector('.BarLayer');
+
+const PositionChecker = new IntersectionObserver((entries, PositionChecker) => {
+  if (entries[0].isIntersecting) {
+    console.log("set");
+    hideElement(".ScrollButton", 0);
+    BarLayer.classList.add("BarHomePage");
+  }
+  else{
+    console.log("unset");
+    hideElement(".ScrollButton", 1);
+    BarLayer.classList.remove("BarHomePage");
+  }
+},);
+
+PositionChecker.observe(HomePage);
+
+
+
+
 ///////////////////////////////////////////////////////////////////////////////////////
 //Information
 
@@ -105,6 +125,20 @@ function FillBar(x, procent) {
     }
   }, 0);
 }
+
+//Information: Funkcja odpowiedzialna za wypelnienie pasków postępu
+const target = document.querySelector('.InformationPageProgresBarUpdate');
+let pBarsFilled = false; // Flaga śledząca, czy paski zostały już wypełnione
+
+const observer = new IntersectionObserver((entries, observer) => {
+  if (entries[0].isIntersecting && !pBarsFilled) {
+    ResetBar();
+    FillBarsSequentially();
+    pBarsFilled = true; // Ustawienie flagi na true po wypełnieniu pasków
+  }
+}, { threshold: 0.5 });
+
+observer.observe(target);
 
 //Resetowanie pasków postępu
 function ResetBar() {

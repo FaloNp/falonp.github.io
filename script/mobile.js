@@ -26,3 +26,4 @@ document.addEventListener('DOMContentLoaded', initializeMenu);
 document.addEventListener('DOMContentLoaded', initializeProjects);
 document.addEventListener('DOMContentLoaded', CloseProjects);
 ///////////////////////////////////////////////////////////////////////////////////////
+
