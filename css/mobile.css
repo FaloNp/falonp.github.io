@@ -173,17 +173,18 @@ section{
 .AboutPage{
     background-color: transparent;
     min-height: 0vh;
+    width: 100%;
     display: flex;
     flex-direction: column-reverse;
-    margin:0px -20px;
+    
 }
 .AboutPageLeftCollumn{
     width: 100%;
     height: 30vh;
-    min-height: 210px;
+    min-height: 110px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
 }
 .AboutPageFoto{
     width: 210px;
@@ -200,14 +201,20 @@ section{
     flex-direction: column;
     overflow-y: scroll;
     min-height: 1000px;
+    width: 100%;
+    align-items: start ;
+    padding: 0px 20px;
 }
 .AboutPageRightCollumnHeader{
     margin-top: 0px;
+    display: flex;
+    width: 100%;
+    padding-left: 0px;
 }
 .AboutPageDescriptionText{
     font-size: var(--text_size);
     width: 100%;
-    margin:auto;
+    margin:0px;
     display: flex;
     line-height: 1.9;
     letter-spacing: 0.049em;
@@ -279,10 +286,13 @@ section{
     justify-content: space-between;
     border-bottom: 1px solid beige;
     padding: 10px 20px;
+    align-items: center;
 }
 .InformationContainerBlockElementReverse{
     flex-direction: row-reverse;
-    background-color: beige;
+    border: 1px solid beige;
+    border-left: none;
+    border-right: none;
 }
 .InformationContainerBlockDescriptionText{
     width: 200px;
@@ -295,12 +305,22 @@ section{
     letter-spacing: 0.049em;
 }
 .InformationContainerDone {
-    width: 200px;
-    max-height: 200px;
-    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: white;
     display: flex;
     align-items: center;
     justify-content: center;    
+}
+.InformationContainerDoneField{
+    width: 110px;
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #abecd6 0%, #fbed96 100%);
 }
   
 .InformationContainerDoneImg {
