@@ -179,21 +179,19 @@ section{
     
 }
 .AboutPageLeftCollumn{
-    width: 100%;
+    width: 550px !important;
     height: 30vh;
-    min-height: 110px;
+    min-height: 420px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 20px;
+    background-color: white;
+    margin:0px;
 }
 .AboutPageFoto{
-    width: 210px;
-    height: 210px;
-    background-image:url('foto/icons/photo.png');
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    border-radius: 50%;
+    width: 200px;
+    height: 200px;
 }
 .AboutPageRightCollumn{
     display: flex;
@@ -298,6 +296,12 @@ section{
 .InformationContainerBlockDescriptionText{
     width: 200px;
     height: 200px;
+
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 200px;
+    min-height: 200px;
+
     padding: 0px;
     display: flex;
     justify-content: center;
@@ -567,3 +571,17 @@ section{
 @media screen and (max-height: 500px) {
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -103,7 +103,7 @@ nav{
     justify-content: space-between;
     top:0px;
     left: 0px;
-    z-index: 2;
+    z-index: 10;
     background: white;
     color:black;
     transition: background-color 0.5s ease-in-out;
@@ -243,6 +243,52 @@ nav{
 }
 .ProjectsPageButton:hover{
     animation: spin 1.5s linear infinite;
+}
+
+.frame {
+    top:calc(50% - 110px + 50px);
+    left:calc(50% - 110px + 50px);
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 205px;
+    height: 205px;
+    background: linear-gradient(45deg, #abecd6 0%, #fbed96 100%);
+}
+.frame-back{
+    width: 200px;
+    height: 200px;
+    max-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.frameFoto {
+    top:calc(50% - 110px);
+    left:calc(50% - 110px);
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 205px;
+    height: 205px;
+    background: linear-gradient(45deg, #abecd6 0%, #fbed96 100%);
+}
+.frameFoto-back{
+    width: 200px;
+    height: 200px;
+    max-height: 200px;
+    background: white;
+}
+.AboutPageFoto{
+    background-image:url('foto/icons/photo.png');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    background-color: white;
 }
 
 @keyframes spin {

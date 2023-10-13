@@ -122,20 +122,18 @@ nav ul li a:hover {
 /*Blok opisajacy pierwszy element strony: Informacje*/
 .AboutPage{
     background-color: white;
-    
 }
 .AboutPageLeftCollumn{
     padding:0px;
     width: 30%;
+    min-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .AboutPageFoto{
-    width: 210px;
-    height: 210px;
-    background-image:url('foto/icons/photo.png');
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    border-radius: 50%;
+    width: 200px;
+    height: 200px;
 }
 .AboutPageRightCollumn{
     padding:50px;
