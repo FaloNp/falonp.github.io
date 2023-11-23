@@ -88,6 +88,18 @@ nav{
     display: none;
 }
 
+.photo img{
+    width: 25px;
+    height: 25px;
+    margin-right:20px;
+    transition: transform 0.3s ease-in-out;
+}
+.photo img:hover{
+    cursor:pointer;
+    transform: scale(1.1);
+    animation: pulse 1.5s infinite;
+}
+
 #FullPageContainer {
     display: flex;
     flex-direction: column;
@@ -232,7 +244,7 @@ nav{
     width: 0px;
     height: 0px;
     left: 50%;
-    top:calc(50% + 40px);
+    top:calc(50% + 55px);
     font-size: 20px;
     color:#1B4D3E;
     display: flex;
@@ -298,5 +310,8 @@ nav{
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
 

@@ -156,6 +156,7 @@ nav ul li a:hover {
     margin:auto;
     display: flex;
     text-align: justify;
+    padding-bottom: 20px;
 }
 /*//////////////////////////////////////////*/
 
@@ -352,14 +353,7 @@ nav ul li a:hover {
     width: 100%;
 }
 .ProjectsPageRightCollumnContentRow:hover{
-    background-color: #1B4D3E;
-    
-}
-
-#ProjectsPageRightCollumnContent img{
-    width: 25px;
-    height: 25px;
-    margin-right:20px;
+    background-color: #1B4D3E; 
 }
 /*//////////////////////////////////////////*/
 
