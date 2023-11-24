@@ -511,17 +511,4 @@ nav ul li a:hover {
 
     
 /*//////////////////////////////////////////*/
-@media screen and (max-height: 500px) {
-    section {
-        overflow-y: hidden !important;
-        height: 100vh;
-    }
-    #FullPageContainer {
-        overflow: scroll !important;
-    }
-    .BackPanel {
-        overflow: scroll;
-        max-height: 200px;
-        background: red;
-    }
-}
+

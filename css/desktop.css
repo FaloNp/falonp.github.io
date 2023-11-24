@@ -515,13 +515,3 @@ nav ul li a:hover {
 
     
 /*//////////////////////////////////////////*/
-@media screen and (max-height: 500px) {
-
-    section{
-        overflow-y: scroll I !important;
-        padding: 250px 0px;
-    }
-    #FullPageContainer{
-        overflow: scroll !important;
-    }
-}
