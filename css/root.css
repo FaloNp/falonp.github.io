@@ -252,6 +252,7 @@ nav{
     justify-content: center;
     font-family: 'Pacifico', cursive;
     cursor: pointer;
+    font-size: 50px;
 }
 .ProjectsPageButton:hover{
     animation: spin 1.5s linear infinite;
@@ -289,7 +290,7 @@ nav{
     align-items: center;
     width: 205px;
     height: 205px;
-    background: linear-gradient(45deg, #abecd6 0%, #fbed96 100%);
+    background: linear-gradient(45deg, #abecd5 0%, #fbed95 100%);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 .frameFoto-back{

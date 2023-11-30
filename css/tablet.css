@@ -353,6 +353,10 @@ nav ul li a:hover {
     height: 25px;
     margin-right:20px;
 }
+.ProjectsPageButtonText{
+    font-size: 20px;
+    margin-top: 0px;
+}
 /*//////////////////////////////////////////*/
 
 /*Blok opisajacy element strony: Field*/

@@ -401,6 +401,10 @@ section{
     justify-content: center;
     align-items: center;
 }
+.ProjectsPageButtonText{
+    font-size: 20px;
+    margin-top: 5px;
+}
 
 .ProjectsPageRightCollumn{
     flex-direction: column;
