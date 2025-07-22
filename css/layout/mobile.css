@@ -54,9 +54,10 @@ h5{
     transition: all 0.3s ease;
     justify-content: start;
     font-size: xx-large;
+    box-shadow: none;
 }
 .navigation-link li:hover{
-    color: #70d774;
+    color: var(--colored-text);
     border: none;
 }
 .navigation-link li a {
