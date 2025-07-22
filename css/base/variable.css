@@ -1,0 +1,59 @@
+:root {
+    /* Theme */
+    --bg-color: #ffffff;
+    --background_image: url('../../resource/photo/background.png');
+
+    --text-color: black;
+    --colored-text: #7c24d4;
+    --font-primary: 'Inter', sans-serif;
+    --font-secondary: 'Pacifico', cursive;
+    
+    --theme-color-primary: #c084fc;
+    --theme-color-secondary: #e9d5ff;
+    --color-shadow: 0 0 20px #c084fc88;
+    --gradient-color-primary:#310e68;
+    --gradient-color-secondary:#5f0f40;
+    --gradient-color:linear-gradient(45deg, var(--gradient-color-primary) 0%, var(--gradient-color-secondary) 100%);
+
+    
+    /* ========== PC ========== */
+    --home__frame-image-size: 20vw;
+    --bar_size: 72px;
+    --header_size: 52px;
+    --text_size:25px;
+    --special-button-width: 225px;
+    --special-button-height: 225px;
+    --special-button-text-size:50px;
+    --button-size: 15px;
+    --wave-column-width: 50px;
+    --wave-column-height: 150px;
+}
+
+
+/* ========== TABLET ========== */
+@media (max-width: 1024px) and (min-width: 768px) {
+    :root {
+        --header_size: 52px;
+        --text_size:25px;
+        --special-button-width: 125px;
+        --special-button-height: 125px;
+        --special-button-text-size: 25px;
+        --button-size: 10px;
+        --wave-column-width: 20px;               
+    }
+}
+
+/* ========== MOBILE ========== */
+@media (max-width: 767px) {
+    :root {
+        --header_size: 52px;
+        --text_size:15px;
+        --special-button-width: 125px;
+        --special-button-height: 125px;
+        --special-button-text-size: 25px;
+        --button-size: 5px;
+        --wave-column-width: 10px;
+        --wave-column-height: 50px;
+    }
+}
+

@@ -1,0 +1,19 @@
+.panel-content{
+    flex-direction: row;
+}
+.panel-content-A {
+    width: 30%;
+}
+.panel-content-B {
+    width: 70%;
+}
+/* =========== GLOBAL ================*/
+.desktop-element{
+    display: none;
+}
+.mobile-element{
+    display: none;
+}
+.tablet-element{
+    display: flex;
+}
