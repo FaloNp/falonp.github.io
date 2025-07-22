@@ -46,6 +46,7 @@
 /* ========== MOBILE ========== */
 @media (max-width: 767px) {
     :root {
+        --font-secondary: 'Poppins', sans-serif;
         --header_size: 52px;
         --text_size:15px;
         --special-button-width: 125px;
