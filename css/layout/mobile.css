@@ -89,6 +89,9 @@ h5{
 .panel-content-B-content{
     text-align: left;
 }
+.information__panel-text{
+    padding: 0px;
+}
 .projects__panel{
     position: fixed;
     display: flex;

@@ -237,6 +237,10 @@ html, body {
     width: 15px;
     height: 15px;
 }
+.information__panel-text{
+    justify-content: space-evenly;
+    padding: 0px 20px;
+}
 /* =========== PROJECTS PANEL =========== */
 #projects__panel-container{
     height: 100%;
